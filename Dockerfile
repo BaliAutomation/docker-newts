@@ -35,5 +35,5 @@ EXPOSE 8888
 
 WORKDIR /opt/newts-${NEWTS_VERSION}
 
-CMD ["/opt/newts-${NEWTS_VERSION}i/bin/newts -c etc/config.yaml"]
+CMD ["/opt/newts-${NEWTS_VERSION}/bin/newts -c etc/config.yaml"]
 
