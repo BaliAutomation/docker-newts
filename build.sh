@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build --tag=bali/docker-newts-1.3.1-0 .
+docker build --tag=bali/docker-newts:1.3.1-0 .
