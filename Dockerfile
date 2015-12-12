@@ -14,7 +14,8 @@ RUN \
   cd /opt; \
   curl -L ${NEWTS_DOWNLOAD_URL} -o newts-${NEWTS_VERSION}-bin.tar.gz ; \
   tar xvf newts-${NEWTS_VERSION}-bin.tar.gz; \
-  chown -R newts:newts newts-${NEWTS_VERSION}
+  mv newts-${VERSION} newts; \
+  chown -R newts:newts /opt/newts
 
 # Copy over daemons
 RUN ln -s /opt/newts-${NEWTS_VERSION}/logs /var/log/newts;
@@ -33,7 +34,5 @@ RUN \
 EXPOSE 8888
 
 
-WORKDIR /opt/newts-${NEWTS_VERSION}
-
-CMD ["/opt/newts-${NEWTS_VERSION}/bin/newts -c etc/config.yaml"]
+CMD ["/opt/newts/bin/newts -c etc/config.yaml"]
 
